@@ -1,5 +1,5 @@
 import './index.css';
-import { TermCard } from './TermCard.jsx';
+import { TermList } from "./TermList.jsx";
 import { createRoot } from 'react-dom/client';
 
 const descriptionList = document.getElementById('description-list');
@@ -10,7 +10,7 @@ const reactRoot = createRoot(descriptionList);
 
 // Вызываем метод render у корня, чтобы отрисовать компонент TermCard.
 // Компонент TermCard будет добавлен внутрь элемента description-list в DOM.
-reactRoot.render(<TermCard />);
+reactRoot.render(<TermList />);
 
 const form = document.getElementById('add-description');
 

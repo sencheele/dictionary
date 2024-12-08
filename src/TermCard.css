@@ -1,0 +1,16 @@
+.term-card {
+  padding: 24px;
+  border-radius: 24px;
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.term-card__title {
+  margin: 0;
+}
+
+.term-card__description {
+  margin: 0;
+}
