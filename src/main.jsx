@@ -2,6 +2,19 @@ import './index.css';
 import { TermList } from "./TermList.jsx";
 import { createRoot } from 'react-dom/client';
 
+let terms = [];
+
+function addTerm(title, description) {
+  terms.push({
+    title,
+    description
+  });
+
+  terms.sort((term1, term2) => term1.title < term2.title ? -1 : 1);
+
+  reactRoot.render(<TermList terms={terms} />);
+}
+
 const descriptionList = document.getElementById('description-list');
 
 // Инициализируем "корень" React-приложения. Это точка, где React будет контролировать DOM.
@@ -10,7 +23,7 @@ const reactRoot = createRoot(descriptionList);
 
 // Вызываем метод render у корня, чтобы отрисовать компонент TermCard.
 // Компонент TermCard будет добавлен внутрь элемента description-list в DOM.
-reactRoot.render(<TermList />);
+reactRoot.render(<TermList terms={terms} />);
 
 const form = document.getElementById('add-description');
 
@@ -22,5 +35,5 @@ form.addEventListener('submit', (event) => {
 
   form.reset();
 
-  console.log(title, description);
+  addTerm(title, description);
 })
