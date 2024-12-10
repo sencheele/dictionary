@@ -1,7 +1,7 @@
 import { TermCard } from "./TermCard.jsx";
 import "./TermList.css";
 
-export const TermList = ({ terms }) => {
+export const TermList = ({ terms, onDelete }) => {
   return (
     <ul className="term-list">
       {terms.map((item) => (
@@ -9,6 +9,8 @@ export const TermList = ({ terms }) => {
           <TermCard
             title={item.title}
             description={item.description}
+            onDelete={onDelete}
+            id={item.id}
           />
         </li>
       ))}

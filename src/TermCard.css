@@ -14,3 +14,13 @@
 .term-card__description {
   margin: 0;
 }
+
+.term-card__delete {
+  align-self: flex-end;
+  width: fit-content;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  background-color: #ff9999;
+}
